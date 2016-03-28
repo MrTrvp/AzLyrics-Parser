@@ -33,8 +33,7 @@ namespace AzLyricParser.UI.Forms
             {
                 result = await _provider.Search(tbQuery.Text, currentPage);
                 lbSongs.Items.AddRange(result.Entries);
-                currentPage++;
-            } while (result.EntriesFound && currentPage != pagesToGet);   
+            } while (result.EntriesFound && currentPage++ != pagesToGet);   
         }
 
         private async void lbSongs_MouseDoubleClick(object sender, MouseEventArgs e)
