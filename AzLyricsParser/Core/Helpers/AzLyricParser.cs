@@ -55,7 +55,7 @@ namespace AzLyricParser.Core.Helpers
                     if (nextSibling.TextContent != ByDelimiter)
                     {                                
                         featuring = nextSibling.TextContent;
-                        featuring = featuring.Substring(1, featuring.Length - 5);
+                        featuring = featuring.Substring(1, featuring.Length - ByDelimiter.Length);
                     }
                     nextElement = nextElement.NextElementSibling;
                     var artist = nextElement.TextContent;
