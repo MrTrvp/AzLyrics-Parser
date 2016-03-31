@@ -13,6 +13,7 @@ namespace AzLyricParser.Core.Helpers
 
         private static readonly string ByDelimiter;
         private static readonly string UsageComment;
+        
         static AzLyricParser()
         {
             Parser = new HtmlParser();
