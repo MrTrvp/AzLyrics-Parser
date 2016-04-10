@@ -22,14 +22,14 @@ namespace AzLyricParser.Core.Providers
 
         public async Task<SearchResult> Search(string query, int page = 0)
         {
-            var queryCollection = new NameValueCollection
+            var formData = new NameValueCollection
             {
                 {"q", query},
                 {"p", page.ToString()},
                 {"w", "songs"}
             };
 
-            var url = new Uri("http://search.azlyrics.com/search.php" + queryCollection.ToQueryString());
+            var url = new Uri("http://search.azlyrics.com/search.php" + formData.ToQueryString());
             return Helpers.AzLyricParser.ParseSearch(await _client.GetStringAsync(url), _client);
         }
 
